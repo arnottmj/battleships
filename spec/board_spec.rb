@@ -25,6 +25,17 @@ describe Board do
     end
   end
 
+  describe 'hit' do
+    let(:ship) {double :ship, position: [2,2]}
+    it 'changes to X when hit' do
+      game = Board.new
+      game.create
+      game.add(ship)
+      game.hit(2,2)
+      expect(game.board[2][2]).to eq X
+    end
+  end
+
 
 
 end
