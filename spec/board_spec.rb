@@ -15,8 +15,13 @@ describe Board do
       board.create
       expect(board.add(0,0)).to eq 1
     end
-  end
 
+    it 'checks if boat is added to the array' do
+      game = Board.new
+      game.create
+      expect(game.add(1,1)).to eq game.board[1][1]
+    end
+  end
 
 
 end
