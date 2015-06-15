@@ -21,7 +21,8 @@ describe Board do
   describe "occupied?" do
 
     it "responds true when space is occupied" do
-      subject.place(:ship, ["A", 1], :direction)
+      ship = double :ship, size: 1
+      subject.place(ship, ["A", 1], :direction)
       expect(subject.occupied?).to eq(true)
     end
 
@@ -35,7 +36,8 @@ describe Board do
   describe "#place" do
 
     it "raises an error when placing a ship in an occupied space" do
-      subject.place(:ship, ["A", 1], :direction)
+      ship = double :ship, size: 1
+      subject.place(ship, ["A", 1], :direction)
       expect { subject.place(:ship, :location, :direction) }.to raise_error 'Space is occupied'
     end
 
@@ -44,8 +46,8 @@ describe Board do
     end
 
     it "raises an error if there are not enough spots available for the whole ship" do
-      ship = double :ship, size: subject.spots.count + 1
-      expect { subject.place(ship, ["A", 1], :west) }.to raise_error "Ship cannot be placed here"
+      bigship = double :bigship, size: subject.spots.count + 1
+      expect { subject.place(bigship, ["A", 1], :west) }.to raise_error "Ship cannot be placed here"
     end
   end
 end
