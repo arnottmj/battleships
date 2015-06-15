@@ -10,26 +10,28 @@ describe Board do
   end
 
   describe 'add' do
-    let(:ship) {double :ship, position: [2,2]}
+    let(:ship) {double :ship, position: [2,2], size: 1}
     let(:board) {Board.new}
     before(:each) {board.create}
-    before(:each) {board.add(ship)}
     it 'adds a boat' do
+      board.add(ship)
       expect(board.add(ship)).to eq ship
     end
 
     it 'checks if boat is added to the array' do
+      board.add(ship)
       expect(board.add(ship)).to eq board.board[2][2]
     end
 
     it 'adds a ship with length > 1' do
-      boat = double :boat, position: [2,2], size: 2
+      ship = double :ship, position: [2,2], size: 2
+      board.add(ship)
       expect(board.board[2][3]).to eq ship
     end
   end
 
   describe 'hit' do
-    let(:ship) {double :ship, position: [2,2], receive_hit: true }
+    let(:ship) {double :ship, position: [2,2], receive_hit: true, size: 1 }
     let(:game) {Board.new}
 
     before(:each) {game.create}

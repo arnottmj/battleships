@@ -1,7 +1,7 @@
 require 'ship'
 
 describe Ship do
-  let(:ship) {Ship.new(1,1)}
+  let(:ship) {Ship.new(1,1,1)}
   it 'saves a position' do
     expect(ship.position).to eq ([1,1])
   end
