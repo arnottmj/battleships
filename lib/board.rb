@@ -1,3 +1,5 @@
+require_relative './ship'
+
 class Board
 
   def initialize
