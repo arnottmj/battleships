@@ -14,4 +14,11 @@ class Board
   end
 
 
+  def add (ship)
+    x = ship.position[0]
+    y = ship.position[1]
+    @board[x][y] = ship
+  end
+
+
 end
