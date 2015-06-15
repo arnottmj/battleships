@@ -13,5 +13,9 @@ class Board
               [0,0,0,0,0,0,0,0,0,0]]
   end
 
+  def add(row,col)
+    @board[row][col] = 1
+  end
+
 
 end
