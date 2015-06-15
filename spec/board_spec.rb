@@ -26,7 +26,7 @@ describe Board do
   end
 
   describe 'hit' do
-    let(:ship) {double :ship, position: [2,2]}
+    let(:ship) {double :ship, position: [2,2], receive_hit: true }
     let(:game) {Board.new}
 
     before(:each) {game.create}
