@@ -32,7 +32,14 @@ describe Board do
       game.create
       game.add(ship)
       game.hit(2,2)
-      expect(game.board[2][2]).to eq X
+      expect(game.board[2][2]).to eq :X
+    end
+    it 'changes to O when there is no ship' do
+      game = Board.new
+      game.create
+      game.add(ship)
+      game.hit(2,3)
+      expect(game.board[2][3]).to eq :O
     end
   end
 

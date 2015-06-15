@@ -22,5 +22,11 @@ class Board
     @board[x][y] = ship
   end
 
+  def hit (x,y)
+    if board[x][y] != :w
+      board[x][y] = :X
+    end
+  end
+
 
 end
