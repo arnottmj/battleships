@@ -1,7 +1,7 @@
 require_relative './ship'
 
 class Board
-
+  attr_reader :spots
   def initialize
     @occupied = false
   end

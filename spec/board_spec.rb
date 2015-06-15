@@ -14,7 +14,12 @@ describe Board do
     expect(subject).to respond_to(:occupied?)
   end
 
+  it "checks that a given location is on the board" do
+    expect(subject.spots).to include ["A", 1]
+  end
+
   describe "occupied?" do
+
     it "responds true when space is occupied" do
       subject.place(:ship, :location, :direction)
       expect(subject.occupied?).to eq(true)
@@ -33,6 +38,6 @@ describe Board do
       subject.place(:ship, :location, :direction)
       expect { subject.place(:ship, :location, :direction) }.to raise_error 'Space is occupied'
     end
-    
+
   end
 end
