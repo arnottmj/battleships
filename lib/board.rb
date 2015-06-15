@@ -1,5 +1,7 @@
 class Board
 
+  attr_reader :board
+
   def create
     @board = [[0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,0,0,0],
