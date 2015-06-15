@@ -1,7 +1,7 @@
 require 'board'
 
 describe Board do
-  
+
   it "responds to #place with two arguments" do
     expect(subject).to respond_to(:place).with(2).arguments
   end
@@ -12,7 +12,7 @@ describe Board do
 
   describe "occupied" do
     it "responds true when space is occupied" do
-      subject.place(ship, location)
+      subject.place(:ship, :location)
       expect(subject.occupied?).to eq(true)
     end
 
