@@ -4,4 +4,8 @@ class Board
 
   end
 
+  def occupied?
+
+  end
+  
 end
