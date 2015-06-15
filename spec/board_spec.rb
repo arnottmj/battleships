@@ -2,6 +2,10 @@ require 'board'
 
 describe Board do
 
+  it "has a set of spots" do
+    expect(subject).to respond_to(:spots)
+  end
+
   it "responds to #place with three arguments" do
     expect(subject).to respond_to(:place).with(3).arguments
   end
@@ -29,9 +33,6 @@ describe Board do
       subject.place(:ship, :location, :direction)
       expect { subject.place(:ship, :location, :direction) }.to raise_error 'Space is occupied'
     end
-
-    it "raises an error if location is off the board" do
-      expect { subject.place(:ship, :A2, :direction) }.to raise_error "Cannot place ship off the board"
-    end
+    
   end
 end
