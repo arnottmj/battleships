@@ -1,3 +1,5 @@
+require 'board'
+
 describe Board do
   it 'creates a board with 10 columns' do
     expect(subject.create.count).to eq 10
@@ -21,6 +23,6 @@ describe Board do
   #   end
   # end
 
-  
+
 
 end
