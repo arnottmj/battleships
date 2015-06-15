@@ -42,5 +42,10 @@ describe Board do
     it "raises an error when placing a ship in a space that doesn't exist" do
       expect { subject.place(:ship, ["A",2], :direction) }.to raise_error 'Cannot place ships off the board'
     end
+
+    it "raises an error if there are not enough spots available for the whole ship" do
+      ship = double :ship, size: subject.spots.count + 1
+      expect { subject.place(ship, ["A", 1], :west) }.to raise_error "Ship cannot be placed here"
+    end
   end
 end
