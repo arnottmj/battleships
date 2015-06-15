@@ -12,7 +12,7 @@ describe Board do
 
   describe "occupied" do
     it "responds true when space is occupied" do
-      subject.place(:ship, :location)
+      subject.place(:ship, :location, :direction)
       expect(subject.occupied?).to eq(true)
     end
 
