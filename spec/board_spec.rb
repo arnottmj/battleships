@@ -39,5 +39,8 @@ describe Board do
       expect { subject.place(:ship, :location, :direction) }.to raise_error 'Space is occupied'
     end
 
+    it "raises an error when placing a ship in a space that doesn't exist" do
+      expect { subject.place(:ship, ["A",2], :direction) }.to raise_error 'Cannot place ships off the board'
+    end
   end
 end
