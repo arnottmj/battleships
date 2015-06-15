@@ -20,7 +20,7 @@ class Board
     x = ship.position[0]
     y = ship.position[1]
     @board[x][y] = ship
-    if @board[x][y].size > 1
+    if ship.size > 1
       i = 1
       while i < @board[x][y].size
         @board[x][y + i] = ship
@@ -41,3 +41,4 @@ class Board
 
 
 end
+

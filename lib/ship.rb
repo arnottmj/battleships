@@ -2,7 +2,7 @@ class Ship
 
   attr_reader :position, :size
 
-  def initialize (sixe,x,y)
+  def initialize (size,x,y)
     @position = [x,y]
     @hit = false
     @size=size
