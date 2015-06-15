@@ -27,20 +27,24 @@ describe Board do
 
   describe 'hit' do
     let(:ship) {double :ship, position: [2,2]}
+    let(:game) {Board.new}
+
+    before(:each) {game.create}
+    before(:each) {game.add(ship)}
     it 'changes to X when hit' do
-      game = Board.new
-      game.create
-      game.add(ship)
       game.hit(2,2)
       expect(game.board[2][2]).to eq :X
     end
     it 'changes to O when there is no ship' do
-      game = Board.new
-      game.create
-      game.add(ship)
       game.hit(2,3)
       expect(game.board[2][3]).to eq :O
     end
+    it 'change the hit value of the ship if hit' do
+      expect(ship).to receive(:receive_hit)
+      game.hit(2,2)
+    end
+
+
   end
 
 
