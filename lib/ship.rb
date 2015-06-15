@@ -1,5 +1,7 @@
 class Ship
 
-  attr_reader :size
+#attr_accessor :size
+
+
 
 end
