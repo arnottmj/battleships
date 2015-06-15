@@ -23,6 +23,15 @@ describe Board do
   #   end
   # end
 
+  describe 'add' do
+    it 'adds a boat' do
+      ship = double :ship, position: (2,2)
+      board = Board.new
+      board.create
+      expect(board.add(ship)).to eq ship
+    end
+  end
+
 
 
 end
