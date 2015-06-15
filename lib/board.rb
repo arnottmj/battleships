@@ -4,7 +4,7 @@ class Board
   attr_reader :spots
   def initialize
     @occupied = false
-    @spots = [["A",1]]
+    @spots = [["A",1,]]
   end
 
   def place(ship, location, direction)

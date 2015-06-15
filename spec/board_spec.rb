@@ -6,6 +6,10 @@ describe Board do
     expect(subject).to respond_to(:spots)
   end
 
+  it "recalls whether a spot is occupied" do
+    expect(subject.spots["A", 1]).to eq('occupied')
+  end
+
   it "responds to #place with three arguments" do
     expect(subject).to respond_to(:place).with(3).arguments
   end
