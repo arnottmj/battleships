@@ -13,9 +13,9 @@ describe Board do
   #   it 'adds a boat with size 1' do
   #     board = Board.new
   #     board.create
-  #     expect(board.add(0,0)).to eq 1
+  #     expect(board.add()).to eq 1
   #   end
-  #
+
   #   it 'checks if boat is added to the array' do
   #     game = Board.new
   #     game.create
