@@ -1,3 +1,5 @@
+require 'ship'
+
 describe Ship do
 
   
