@@ -9,6 +9,7 @@ class Board
 
   def place(ship, location, direction)
     fail "Space is occupied" if @occupied
+    fail "Cannot place ships off the board" unless @spots.include? location
     @occupied = true
   end
 
