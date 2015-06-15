@@ -24,6 +24,7 @@ class Board
 
   def hit (x,y)
     if board[x][y] != :w
+      board[x][y].receive_hit
       board[x][y] = :X
     else
       board[x][y] = :O
