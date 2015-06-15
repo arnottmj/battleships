@@ -2,8 +2,8 @@ require 'board'
 
 describe Board do
 
-  it "responds to #place with two arguments" do
-    expect(subject).to respond_to(:place).with(2).arguments
+  it "responds to #place with three arguments" do
+    expect(subject).to respond_to(:place).with(3).arguments
   end
 
   it "responds to #occupied?" do
@@ -20,6 +20,9 @@ describe Board do
       expect(subject.occupied?).to eq(false)
     end
 
+  end
+
+  describe "#place" do
 
   end
 end

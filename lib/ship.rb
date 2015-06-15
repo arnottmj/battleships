@@ -1,7 +1,5 @@
 class Ship
 
-#attr_accessor :size
-
-
+  attr_accessor :size
 
 end
