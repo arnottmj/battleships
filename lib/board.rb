@@ -7,6 +7,7 @@ class Board
   end
 
   def place(ship, location, direction)
+    fail "Space is occupied" if @occupied
     @occupied = true
   end
 
