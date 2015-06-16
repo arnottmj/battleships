@@ -33,7 +33,7 @@ class Board
 
   def place(ship, cell, direction)
 
-    check_space ship , cell
+    check_space cell
     # fail "Ship cannot be placed here" if ship.size > @spots.keys.count
     @spots[cell] = ship
     if ship.size > 1
@@ -50,6 +50,7 @@ class Board
 
 
   def hit cell
+    fail "Cannot place ships off the board" unless @spots.keys.include? cell
     if occupied? cell
       @spots[cell].hit
       hits << cell
@@ -65,7 +66,7 @@ class Board
     fail 'Ship cannot be placed here' if ship.size > (@row_size + 1) - cell % @row_size
     i = 1
     while i < ship.size
-      check_space ship ,cell + i
+      check_space cell + i
       @spots[cell + i] = ship
       i += 1
     end
@@ -75,7 +76,7 @@ class Board
     fail 'Ship cannot be placed here' if ship.size > cell % @row_size
     i = 1
     while i < ship.size
-      check_space ship ,cell - i
+      check_space cell - i
       @spots[cell - i] = ship
       i += 1
     end
@@ -86,7 +87,7 @@ class Board
     i = 1
     j = 10
     while i < ship.size
-      check_space ship ,cell + j
+      check_space cell + j
       @spots[cell + j] = ship
       i += 1
       j += 10
@@ -97,7 +98,7 @@ class Board
      i = 1
      j = -10
      while i < ship.size
-       check_space ship, cell - j
+       check_space cell - j
        @spots[cell + j] = ship
        i += 1
        j -= 10
@@ -106,7 +107,7 @@ class Board
 
   private
 
-  def check_space ship , cell
+  def check_space cell
     fail "Space is occupied" if occupied?(cell)
     fail "Cannot place ships off the board" unless @spots.keys.include? cell
   end
