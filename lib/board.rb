@@ -35,12 +35,14 @@ class Board
 
     check_space cell
     # fail "Ship cannot be placed here" if ship.size > @spots.keys.count
-    @spots[cell] = ship
     if ship.size > 1
       if Board.method_defined? direction
         send direction, ship, cell
+      else
+        fail 'Incorrect direction'
       end
     end
+    @spots[cell] = ship
   end
 
 
@@ -50,6 +52,8 @@ class Board
 
 
   def hit cell
+    all_attempts = hits + misses
+    fail 'Noooooooo' if all_attempts.include? cell
     fail "Cannot place ships off the board" unless @spots.keys.include? cell
     if occupied? cell
       @spots[cell].hit
