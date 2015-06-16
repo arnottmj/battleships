@@ -64,6 +64,13 @@ describe Board do
       subject.hit(1)
       expect(subject.misses).to eq [1]
     end
+
+    it 'throws an error if the guess is a repeat' do
+
+      subject.hit(1)
+      expect { subject.hit(1) }.to raise_error "Noooooooo"
+
+    end
   end
 
 
