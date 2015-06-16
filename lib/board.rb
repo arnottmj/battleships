@@ -11,9 +11,11 @@ class Board
   # can tell a ship when it has been hit (and where it has been hit?)
   # can return the outcome of an airstrike
 
-  attr_reader :spots
+  attr_reader :spots, :hits, :misses
   def initialize
     @spots = create(10,10)
+    @hits = []
+    @misses = []
   end
 
   def create length, height
