@@ -51,7 +51,12 @@ describe Board do
     end
 
     it 'stores an array of hits' do
+      ship = double :ship , size: 1, hit: true
+      board = Board.new
+      board.place(ship,1,:D)
 
+      board.hit(1)
+      expect(board.hits).to eq [1]
 
 
     end
