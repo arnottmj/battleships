@@ -33,7 +33,6 @@ class Board
 
   def place(ship, cell, direction)
 
-
     check_space ship , cell
     # fail "Ship cannot be placed here" if ship.size > @spots.keys.count
     @spots[cell] = ship
@@ -44,12 +43,19 @@ class Board
     end
   end
 
+
   def occupied? cell
     @spots[cell] != 'unoccupied' && @spots[cell] != nil
   end
 
+
   def hit cell
-    @spots[cell].hit if occupied? cell
+    if occupied? cell
+      @spots[cell].hit
+      hits << cell
+    else
+      misses << cell
+    end
   end
 
 
