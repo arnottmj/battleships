@@ -58,13 +58,11 @@ describe Board do
       board.hit(1)
       expect(board.hits).to eq [1]
 
-
     end
 
     it 'stores an array of misses' do
-
-
-
+      subject.hit(1)
+      expect(subject.misses).to eq [1]
     end
   end
 
