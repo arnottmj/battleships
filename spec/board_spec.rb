@@ -26,19 +26,40 @@ describe Board do
     expect(subject).to respond_to(:create).with(2).arguments
   end
 
+  it 'responds to misses' do
+    expect(subject).to respond_to(:misses)
+  end
+
+  it 'responds to hits' do
+    expect(subject).to respond_to(:hits)
+  end
+
   describe 'hit' do
+
     it 'responds to hit' do
       expect(subject).to respond_to(:hit).with(1).argument
     end
 
 
-    it 'chnaging a ship status' do
+    it 'changes a ship status' do
       ship = double :ship , size: 1
       board = Board.new
       board.place(ship,1,:D)
 
       expect(ship).to receive :hit
       board.hit(1)
+    end
+
+    it 'stores an array of hits' do
+
+
+
+    end
+
+    it 'stores an array of misses' do
+
+
+
     end
   end
 
