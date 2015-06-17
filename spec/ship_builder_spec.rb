@@ -9,4 +9,8 @@ describe ShipBuilder do
     expect(subject.collection.length).to eq 5
   end
 
+  it 'responds to create' do
+    expect(subject).to respond_to :create
+  end
+
 end
