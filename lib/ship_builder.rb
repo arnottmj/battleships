@@ -1,3 +1,5 @@
+require 'ship'
+
 class ShipBuilder
 
   attr_reader :collection
@@ -13,6 +15,8 @@ class ShipBuilder
 
   def create name
 
+    Ship.new(get_size(name))
+
 
   end
 
@@ -23,3 +27,4 @@ class ShipBuilder
 
 
 end
+
