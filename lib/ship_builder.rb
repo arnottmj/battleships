@@ -11,4 +11,11 @@ class ShipBuilder
                    patrol_boat:      2}
   end
 
+  def create
+
+
+  end
+
+
+
 end

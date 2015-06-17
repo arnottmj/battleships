@@ -13,4 +13,10 @@ describe ShipBuilder do
     expect(subject).to respond_to :create
   end
 
+  describe 'get_size' do
+    it 'return size of a given symbol' do
+      expect(subject.get_size(:aricraft_carrier)).to eq 5
+    end
+  end
+
 end
