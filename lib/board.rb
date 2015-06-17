@@ -11,11 +11,12 @@ class Board
   # can tell a ship when it has been hit (and where it has been hit?)
   # can return the outcome of an airstrike
 
-  attr_reader :spots, :hits, :misses
+  attr_reader :spots, :hits, :misses, :num_of_ships 
   def initialize
     @spots = create(10,10)
     @hits = []
     @misses = []
+    @num_of_ships = 0
   end
 
   def create length, height
@@ -32,7 +33,6 @@ class Board
 
 
   def place(ship, cell, direction)
-
     check_space cell
     # fail "Ship cannot be placed here" if ship.size > @spots.keys.count
     if ship.size > 1
@@ -43,6 +43,7 @@ class Board
       end
     end
     @spots[cell] = ship
+    @num_of_ships += 1
   end
 
 
