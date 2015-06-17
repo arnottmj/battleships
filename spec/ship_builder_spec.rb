@@ -17,6 +17,21 @@ describe ShipBuilder do
     it 'creates a ship' do
       expect(subject.create(:aircraft_carrier)).to be_instance_of(Ship)
     end
+
+    it 'removes ship from hash after use' do
+      subject.create(:aircraft_carrier)
+      expect(subject.collection.length).to eq 4
+    end
+
+    it 'raises error when empty' do
+      subject.create(:aircraft_carrier)
+      subject.create(:battleship)
+      subject.create(:submarine)
+      subject.create(:destroyer)
+      subject.create(:patrol_boat)
+
+      expect{subject.create(:destroyer)}.to raise_error 'collection is empty'
+    end
   end
 
   describe 'get_size' do
