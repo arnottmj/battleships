@@ -14,14 +14,22 @@ class ShipBuilder
   end
 
   def create name
-
-    Ship.new(get_size(name))
-
+    raise 'collection is empty' if empty?
+    ship = Ship.new(get_size(name))
+    collection.delete(name)
+    ship
 
   end
 
   def get_size(name)
     collection[name]
+  end
+
+  private
+
+
+  def empty?
+    collection.count <= 0
   end
 
 
