@@ -68,7 +68,7 @@ class Board
   protected
 
   def east(ship, cell)
-    fail 'Ship cannot be placed here' if ((cell-1) % @row_size) + ship.size > 10
+    fail 'Ship cannot be placed here' if (((cell-1) % @row_size) + ship.size) > 10
     i = 1
     while i < ship.size
       check_space cell + i
@@ -78,7 +78,7 @@ class Board
   end
 
   def west(ship,cell)
-    fail 'Ship cannot be placed here' if (ship.size-1) > (cell-1) % @row_size
+    fail 'Ship cannot be placed here' if (ship.size - 1) > ((cell - 1) % @row_size)
     i = 1
     while i < ship.size
       check_space cell - i
@@ -87,8 +87,8 @@ class Board
     end
   end
 
-  def south(ship,cell)
-    fail 'Ship cannot be placed here' if ship.size > (110 - cell)/10
+  def south(ship,cell) 
+    fail 'Ship cannot be placed here' if ship.size > (110 - cell) / 10
     i = 1
     j = 10
     while i < ship.size
@@ -99,7 +99,7 @@ class Board
     end
   end
 
-  def north(ship, cell)
+  def north(ship, cell) 
      fail 'Ship cannot be placed here' if ship.size > (cell / 10) + 1
      i = 1
      j = -10
