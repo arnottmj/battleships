@@ -2,7 +2,7 @@ require 'player'
 
 describe Player do
   let(:ship) {double :ship, instance_of?: true, sunk?: true}
-  let(:board) {double :board, spots: {1 => ship, 2 => ship, 3 => ship}, num_of_ships: 3}
+  let(:board) {double :board, num_of_ships: 3, hits: [1], misses: [2], unique_ships: [ship,ship,ship]}
   subject {Player.new(board)}
 
   it 'can place a ship on the board' do
@@ -22,4 +22,14 @@ describe Player do
 
     end
   end
+
+  it 'will allow user to see their hits' do
+    expect(subject.hit_locations).to eq [1]
+  end
+
+  it 'will allow user to see their misses' do
+    expect(subject.miss_locations).to eq [2]
+  end
+
+
 end

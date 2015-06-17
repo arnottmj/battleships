@@ -11,12 +11,12 @@ class Board
   # can tell a ship when it has been hit (and where it has been hit?)
   # can return the outcome of an airstrike
 
-  attr_reader :spots, :hits, :misses, :num_of_ships 
+  attr_reader :spots, :hits, :misses, :unique_ships
   def initialize
     @spots = create(10,10)
     @hits = []
     @misses = []
-    @num_of_ships = 0
+    @unique_ships = []
   end
 
   def create length, height
@@ -43,7 +43,7 @@ class Board
       end
     end
     @spots[cell] = ship
-    @num_of_ships += 1
+    @unique_ships << ship
   end
 
 

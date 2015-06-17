@@ -1,4 +1,4 @@
-require 'ship'
+require_relative 'ship'
 
 class ShipBuilder
 
@@ -35,4 +35,6 @@ class ShipBuilder
 
 
 end
+
+ship = Ship.new
 
