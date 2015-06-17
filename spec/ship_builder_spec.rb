@@ -32,6 +32,10 @@ describe ShipBuilder do
 
       expect{subject.create(:destroyer)}.to raise_error 'collection is empty'
     end
+
+    it 'raises an error when a ship is not in the collection' do
+      expect{subject.create(:x)}.to raise_error 'invalid ship name'
+    end
   end
 
   describe 'get_size' do
