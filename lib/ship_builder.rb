@@ -36,5 +36,5 @@ class ShipBuilder
 
 end
 
-ship = Ship.new
+
 
