@@ -11,9 +11,13 @@ class ShipBuilder
                    patrol_boat:      2}
   end
 
-  def create
+  def create name
 
 
+  end
+
+  def get_size(name)
+    collection[name]
   end
 
 
