@@ -15,10 +15,10 @@ describe Player do
     subject.hit(:cell)
   end
 
-  describe 'win?' do
+  describe 'lose?' do
     it 'returns true when player has won' do
 
-      expect(subject).to be_win
+      expect(subject).to be_lose
 
     end
   end

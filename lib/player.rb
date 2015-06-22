@@ -21,7 +21,7 @@ class Player
 
   end
 
-  def win?
+  def lose?
     count = 0
     @board.unique_ships.each do |value|
       if value.sunk?
