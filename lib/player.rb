@@ -1,5 +1,4 @@
 class Player
-
   def initialize board
     @board = board
   end
@@ -18,12 +17,11 @@ class Player
 
   def hit cell
     @board.hit(cell)
-
   end
 
   def lose?
     count = 0
-    
+
     @board.unique_ships.each do |value|
       if value.sunk?
         count += 1
