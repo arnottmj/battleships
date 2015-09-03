@@ -1,7 +1,6 @@
 require_relative 'ship'
 
 class ShipBuilder
-
   attr_reader :collection
 
   def initialize
@@ -16,6 +15,7 @@ class ShipBuilder
   def create name
     raise 'collection is empty' if empty?
     raise 'invalid ship name' if !collection.keys.include?(name)
+
     ship = Ship.new(get_size(name))
     collection.delete(name)
     ship
@@ -28,13 +28,9 @@ class ShipBuilder
 
   private
 
-
   def empty?
     collection.count <= 0
   end
-
-
-
 end
 
 

@@ -23,6 +23,7 @@ class Player
 
   def lose?
     count = 0
+    
     @board.unique_ships.each do |value|
       if value.sunk?
         count += 1
@@ -31,5 +32,4 @@ class Player
 
     @board.unique_ships.count == count
   end
-
 end
